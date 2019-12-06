@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Login</h1>
+        <form action="" method="POST">
+            <label>Username</label>
+            <div class="form-group">
+                <input type="text" name="username" class="form-control" value={{ request.form.username }}>
+            </div>
+            <label>Password</label>
+            <div class="form-group">
+                <input type="text" name="password" class="form-control" value={{ request.form.password }}>
+            </div>
+            {% if error %}
+                <div class="alert alert-danger">{{ error }}</div> 
+            {% endif %}
+            {% if msg %}
+                <div class="alert alert-success">{{ msg }}</div>
+            {% endif %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+{% endblock body %}
